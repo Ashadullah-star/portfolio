@@ -1,0 +1,161 @@
+:root {
+    color-scheme: dark;
+    --paper: #0b1220;
+    --ink: #e8eef9;
+    --muted: #9fb0cc;
+    --azure: #4da3ff;
+    --azure-dark: #86c0ff;
+    --sun: #ffb703;
+    --line: #22304a;
+    --on-azure: #06121f;
+  }
+  
+  * { box-sizing: border-box; }
+  
+  html { scroll-behavior: smooth; }
+  
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+  
+  a { color: var(--azure); }
+  a:hover { color: var(--azure-dark); }
+  
+  a:focus-visible,
+  .btn:focus-visible {
+    outline: 3px solid var(--sun);
+    outline-offset: 3px;
+  }
+  
+  /* ---------- Header ---------- */
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 1.25rem 1.25rem 0;
+  }
+  
+  .logo {
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  
+  .site-header nav a {
+    margin-left: 1.1rem;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  
+  .site-header nav a:first-child { margin-left: 0; }
+  .site-header nav a:hover { color: var(--azure); }
+  
+  /* ---------- Layout ---------- */
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+  
+  section { padding: 2.75rem 0; border-top: 1px solid var(--line); }
+  
+  h1, h2, h3 { line-height: 1.2; margin: 0 0 0.75rem; }
+  
+  h2 {
+    font-size: 1.6rem;
+    display: inline-block;
+    padding-bottom: 0.25rem;
+    border-bottom: 4px solid var(--sun);
+  }
+  
+  h3 { font-size: 1.2rem; }
+  
+  p { max-width: 62ch; margin: 0 0 1rem; }
+  
+  /* ---------- Hero ---------- */
+  .hero { border-top: none; padding: 4rem 0 3rem; }
+  
+  .hero h1 {
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    letter-spacing: -0.02em;
+  }
+  
+  .lead { font-size: 1.2rem; color: var(--muted); }
+  
+  .buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.7rem 1.3rem;
+    border: 2px solid var(--azure);
+    border-radius: 6px;
+    color: var(--azure);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .btn:hover { background: var(--azure); color: var(--on-azure); }
+  
+  .btn.primary { background: var(--azure); color: var(--on-azure); }
+  .btn.primary:hover { background: var(--azure-dark); border-color: var(--azure-dark); }
+  
+  /* ---------- Skills ---------- */
+  .skills { margin: 0; }
+  
+  .skills > div {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr;
+    gap: 0.5rem 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  
+  .skills dt { font-weight: 700; }
+  .skills dd { margin: 0; color: var(--muted); }
+  
+  /* ---------- Projects ---------- */
+  .project {
+    padding: 1.25rem 0 1.25rem 1.1rem;
+    border-left: 4px solid var(--azure);
+    margin-bottom: 1.5rem;
+  }
+  
+  .project p { margin-bottom: 0.5rem; }
+  .tech { color: var(--muted); font-size: 0.95rem; }
+  
+  .sub { margin-top: 2rem; font-size: 1.1rem; }
+  .learning { margin: 0; padding-left: 1.2rem; color: var(--muted); }
+  .learning li { margin-bottom: 0.3rem; }
+  
+  /* ---------- Contact ---------- */
+  .contact-list { list-style: none; padding: 0; margin: 0; }
+  .contact-list li { margin-bottom: 0.4rem; }
+  
+  /* ---------- Footer ---------- */
+  footer {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 2.5rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  
+  /* ---------- Mobile ---------- */
+  @media (max-width: 520px) {
+    .skills > div { grid-template-columns: 1fr; gap: 0; }
+    .site-header nav a { margin-left: 0.8rem; }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
